@@ -1,0 +1,9 @@
+{
+  "appId": "com.verum.omnis",
+  "appName": "Verum Omnis",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https",
+    "allowNavigation": []
+  }
+}

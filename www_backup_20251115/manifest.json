@@ -1,0 +1,8 @@
+{
+  "short_name": "Verum Omnis",
+  "name": "Verum Omnis - Forensic AI Platform",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#030712",
+  "background_color": "#030712"
+}

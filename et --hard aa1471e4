@@ -1,0 +1,5 @@
+[33m1a4f2a7a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m chore(ci): add safe Android build that only refreshes www assets
+[33m6a586368[m ci: rebuild with new www
+[33mabf2481b[m ci: run pipeline
+[33maa1471e4[m feat(web): import Verumfinished www from AI Studio (.mixplorer source)
+[33m3b99d9d1[m ci: redeploy hosting to Cloud Run

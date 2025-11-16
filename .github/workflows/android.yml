@@ -1,0 +1,49 @@
+name: Android Build
+on:
+  push: { branches: [ main ] }
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: '17' }
+      - uses: android-actions/setup-android@v3
+
+      - name: Install SDK packages
+        run: |
+          sdkmanager --install "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+
+      - name: Install deps & build web
+        run: |
+          npm ci || npm i
+          npm run build
+
+      - name: Capacitor sync (recreate android to ensure wrapper)
+        run: |
+          rm -rf android
+          npx cap add android
+          npx cap sync android
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > android/local.properties
+
+      # ✅ Gradle setup & caching (no binaries in repo)
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          cache-read-only: false
+
+      - name: Build APK (debug)
+        working-directory: android
+        run: |
+          chmod +x gradlew
+          ./gradlew --no-daemon --stacktrace assembleDebug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-build
+          path: android/app/build/outputs/apk/debug/*.apk

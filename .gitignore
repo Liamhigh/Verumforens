@@ -1,0 +1,10 @@
+
+# ignore local Gradle dists
+gradle.zip
+gradle-*/
+*.zip
+
+# ignore local Gradle dists
+gradle.zip
+gradle-*/
+*.zip

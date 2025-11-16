@@ -1,0 +1,7 @@
+{
+  "hosting": {
+    "site": "verum-omnis-v2",
+    "public": "public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  }
+}

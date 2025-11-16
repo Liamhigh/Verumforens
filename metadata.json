@@ -1,8 +1,0 @@
-{
-  "name": "Verum Omnis - Forensic AI Platform",
-  "description": "A stateless, constitutional forensic AI assistant that analyzes evidence, detects contradictions, and produces sealed, court-ready reports with full integrity and jurisdictional context.",
-  "requestFramePermissions": [
-    "microphone",
-    "geolocation"
-  ]
-}

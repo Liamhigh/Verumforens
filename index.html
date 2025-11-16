@@ -1,87 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verum Omnis - Forensic AI Platform</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        html, body {
-            height: 100%;
-            overflow: hidden;
-            background-color: #030712; /* bg-gray-950 */
-        }
-        #root {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        .message-bubble {
-            animation: fadeIn 0.3s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .spinner {
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        /* Scrollbar styles */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #111827; /* bg-gray-900 */
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #374151; /* bg-gray-700 */
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #4b5563; /* bg-gray-600 */
-        }
-        /* Progress indicator */
-        @keyframes progress-indeterminate {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(100%); }
-        }
-        .animate-progress-indeterminate {
-            width: 50%;
-            animation: progress-indeterminate 1.5s linear infinite;
-        }
-        /* Prose styles for AI responses */
-        .prose {
-            max-width: none;
-        }
-        .prose strong {
-            color: #d1d5db; /* gray-300 */
-        }
-    </style>
-<script type="importmap">
-{
-  "imports": {
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
-    "qrcode": "https://cdn.jsdelivr.net/npm/qrcode@1.5.3/+esm",
-    "pdf-lib": "https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/+esm",
-    "pdfjs-dist/": "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/",
-    "pdfjs-dist": "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/+esm"
-  }
-}
-</script>
-<!-- Tesseract.js is not an ES Module, load it traditionally -->
-<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js" defer></script>
-</head>
-<body class="bg-gray-950">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verum Omnis</title>
+  </head>
+  <body>
     <div id="root"></div>
-    <div id="modal-root"></div>
-    <script type="module" src="/index.tsx"></script>
-</body>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>

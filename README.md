@@ -1,20 +1,13 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Verum Omnis — Drop-in Scaffold
 
-# Run and deploy your AI Studio app
+## Commands
+npm i
+npm run build
+npx cap add android   # one-time
+npx cap sync android
+npx cap run android
 
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/drive/1FIAmDmMzqXirSnBhGFex5gPKImWtRjDq
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Notes
+- Builds web to ./www (Capacitor webDir).
+- Minimal Android project included (MainActivity + file_paths.xml).
+- You can replace this `src` with your existing app; keep configs.
